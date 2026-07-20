@@ -2,7 +2,7 @@
 target/
 
 # Secrets — never commit real DB credentials or JWT secrets
-application.properties
+# application.properties 
 application-local.properties
 application-secrets.properties
 *.env
