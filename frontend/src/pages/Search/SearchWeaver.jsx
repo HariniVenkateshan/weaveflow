@@ -32,7 +32,7 @@ export default function SearchWeaver() {
       <form className="card" onSubmit={handleSearch} style={{ display: 'flex', gap: 12, alignItems: 'flex-end', maxWidth: 480 }}>
         <div className="form-field" style={{ flex: 1 }}>
           <label htmlFor="weaverName">Weaver Name</label>
-          <input id="weaverName" value={weaverName} onChange={(e) => setWeaverName(e.target.value)} placeholder="e.g. Kris" required />
+          <input id="weaverName" value={weaverName} onChange={(e) => setWeaverName(e.target.value)} placeholder="e.g. Harini" required />
         </div>
         <button className="btn btn-gold" type="submit" disabled={loading}>
           {loading ? 'Searching…' : 'Search'}
