@@ -3,15 +3,18 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
 export default function Login() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const location = useLocation()
+  const prefill = new URLSearchParams(location.search)
+
+  const [username, setUsername] = useState(prefill.get('u') || '')
+  const [password, setPassword] = useState(prefill.get('p') || '')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
+  
   const { login } = useAuth()
   const navigate = useNavigate()
-  const location = useLocation()
-  const redirectTo = location.state?.from || '/'
+  const redirectTo = location.state?.from || '/dashboard'
 
   const handleSubmit = async (e) => {
     e.preventDefault()

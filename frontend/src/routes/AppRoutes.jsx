@@ -1,3 +1,5 @@
+import LandingPage from '../pages/LandingPage/LandingPage'
+
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import AddWeaver from '../pages/Weavers/AddWeaver'
@@ -21,7 +23,9 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/" element={withLayout(<Dashboard />)} />
+      <Route path="/" element={<LandingPage />} />
+
+      <Route path="/dashboard" element={withLayout(<Dashboard />)} />
       <Route path="/weavers/add" element={withLayout(<AddWeaver />, ['ADMIN'])} />
       <Route path="/looms/add" element={withLayout(<AddLoom />, ['ADMIN'])} />
       <Route path="/looms/update" element={withLayout(<UpdateSarees />)} />
